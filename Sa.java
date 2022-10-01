@@ -5,6 +5,7 @@ public class Sa {
     int speed = 0;
     int speedChange;
     int maxPassenger;
+    int CurrentPassenger;
     int price;
     String station;
 
@@ -12,117 +13,80 @@ public class Sa {
 
     }
     //메서드 - 운행시작
-    public void StartOp(String station) {
+    public void StartOperation(String station) {
         this.station = station;
     }
+
+
     //메서드 - 속도변경
-    public void SpeedCh(int speedChange ){
+    public void SpeedChange(int speedChange ){
         this.speedChange = speedChange;
 
     }
     //메서드 - 상태변경
-    public void StateCh(){
-        if (this.station == " ") this.station = "";
+    public void StateChange(){
+        if (this.station == "운행중") this.station = "차고지행";
+        else if (this.station == "차고지행")this.station ="운행중";
 
+        if(fuelvolume < 10) {
+            this.station = "차고지행";
 
-    }
-    //메서드 - 승객탑승  -버스
-    public void PassengerBo(int newPassenger){
-        this.maxPassenger= 30;
-        if(this.currentPassenger + newPassenger <= maxPassenger) {
-            System.out.println("탑승 승객 수 =");
-            System.out.println("잔여 승객 수 =");
-            System.out.println("요금 확인 =");
-        }
-        else {
-            System.out.println("최대 승객 수 초과");
         }
     }
-    //메서드 - 승객탑승  -택시
-    public void PassengerBo(int newPassenger) {
-        this. =;
-        if () {
-            System.out.println("탑승 승객 수 =");
-            System.out.println("잔여 승객 수 =");
-            System.out.println("기본 요금 확인 =");
-            System.out.println("목적지 =");
-            System.out.println("목적지까지 거리 =");
-            System.out.println("지불할 요금 = ");
-            System.out.println("상태 =");
-        } else {
-            System.out.println("최대 승객 수 초과");
-        }
+    //get/set
+    public int getNumber() {
+        return number;
     }
-        // 기본 생성자
-    Sa(int number, int fuelvolume, int speed, int speedChange, int maxPassenger) {
+    public void setNumber(int number){
         this.number = number;
+    }
+    public int getFuelvolume() {
+        return  fuelvolume;
+    }
+    public void setFuelvolume(int fuelvolume) {
         this.fuelvolume = fuelvolume;
-        this.speed = speed;
-        this.speedChange = speedChange;
-        this.maxPassenger = maxPassenger;
+        if (fuelvolume < 10) {
+            System.out.println("주유 필요");
+            StateChange();
         }
+    }
+    public int getSpeed() {
+        return speed;
+    }
 
-    //공통 기능 get/set
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public int getMaxPassenger() {
+        return maxPassenger;
+    }
+
     public void setMaxPassenger(int maxPassenger) {
         this.maxPassenger = maxPassenger;
     }
+
+    public int getCurrentPassenger() {
+        return CurrentPassenger;
+    }
+
+    public void setCurrentPassenger(int currentPassenger) {
+        CurrentPassenger = currentPassenger;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getStation() {
+        return station;
+    }
+
+    public void setStation(String station) {
+        this.station = station;
+    }
 }
-
-
-    public class Bus extends Sa {
-
-        int currentPassenger =28 ;
-
-    public Bus(int busNum) {
-        super.stationOp("차고지행");
-        super.number = busNum;
-        super.fuelvolume = 100;
-        super.speed = 0;
-        super.maxPassenger = 30;
-        super.speedChange =;
-        super.price = 1000;
-
-        System.out.println("각 bus 번호 다른지 확인");
-     }
-
-        @Override
-        public void PassengerBo(int newPassenger) {
-            super.PassengerBo(newPassenger);
-        }
-
-        --버스 기능 입출
-        public void (){
-        this.fuelvolume
-        }
-    }
-
-    public class Texi extends Sa {
-
-    String destination;  //목적지
-    int destinationDistance;
-    int defaultRate = 3000;
-    int defaultDistance = 1; //기본거리
-    int distanceRate = 1000;
-
-    public Texi(int taxiNum) {
-        super.number = taxiNum;
-        super.maxPassenger = 4;
-        super.fuelvolume = 100;
-        super.speed = 0;
-
-        System.out.println();
-        }
-
-        @Override
-        public void distanceRatePlus(int distanceRate) {
-            System.out.println();
-        }
-
-        //택시 기능 입출
-        public void (){
-        this.
-        }
-
-    }
-
-
