@@ -1,6 +1,7 @@
 public class Bus extends Sa {
 
     int currentPassenger =28 ;
+    int currentFuel_volume;
 
     public Bus(int busNum) {
         super.StartOperation("차고지행");
@@ -13,7 +14,7 @@ public class Bus extends Sa {
     }
     //메서드 - 번호 확인
     public void numberComparison(int busNum) {
-        System.out.println("차량번호는 : "+this.busNum);
+        System.out.println("차량번호는 : "+this.number);
     }
     public void start(int busNum) {
         System.out.println(busNum+"번 버스 운행 시작");
@@ -42,7 +43,8 @@ public class Bus extends Sa {
 
     //메서드 주유 기능
     public void oiling(int oil) {
-        if (oil >= 0) { //즈우 시 차고지 행
+        if(oil >= 0)
+        {                           //주유 시 차고지 행
             station = "차고지행";
             System.out.println("상태 : " + station);
         }
@@ -62,5 +64,72 @@ public class Bus extends Sa {
 
 
     //--버스 기능 get/set
-    public in
+
+    @Override
+    public int getCurrentPassenger() {
+        return currentPassenger;
+    }
+
+    @Override
+    public void setCurrentPassenger(int currentPassenger) {
+        this.currentPassenger = currentPassenger;
+    }
+
+    public int getCurrentFuel_volume() {
+        return currentFuel_volume;
+    }
+
+    public void setCurrentFuel_volume(int currentFuel_volume) {
+        this.currentFuel_volume = currentFuel_volume;
+    }
+
+    @Override
+    public int getNumber() {
+        return super.getNumber();
+    }
+
+    @Override
+    public void setNumber(int number) {
+        super.setNumber(number);
+    }
+
+    @Override
+    public int getFuelvolume() {
+        return super.getFuelvolume();
+    }
+
+    @Override
+    public void setFuelvolume(int fuelvolume) {
+        super.setFuelvolume(fuelvolume);
+    }
+
+    @Override
+    public int getSpeed() {
+        return super.getSpeed();
+    }
+
+    @Override
+    public void setSpeed(int speed) {
+        super.setSpeed(speed);
+    }
+
+    @Override
+    public int getMaxPassenger() {
+        return super.getMaxPassenger();
+    }
+
+    @Override
+    public void setMaxPassenger(int maxPassenger) {
+        super.setMaxPassenger(maxPassenger);
+    }
+
+    @Override
+    public int getPrice() {
+        return super.getPrice();
+    }
+
+    @Override
+    public void setPrice(int price) {
+        super.setPrice(price);
+    }
 }

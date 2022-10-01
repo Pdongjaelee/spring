@@ -16,6 +16,8 @@ public class Main {
         System.out.println();
         bus1.oiling(-55);
 
+        System.out.println("======여기는 택시=========");
+
         Texi texi1 = new Texi(1);
         Texi texi2 = new Texi(2);
 
